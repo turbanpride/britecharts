@@ -165,6 +165,7 @@ function createLineChartWithFixedHeight() {
             .margin(lineMargin)
             .grid('full')
             .dateLabel('fullDate')
+            .hasHighlightedDataPoints(true)
             .on('customMouseOver', function() {
                 chartTooltip.show();
             })

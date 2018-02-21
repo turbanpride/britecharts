@@ -150,6 +150,7 @@ define(function(require){
             linearGradient,
             lineGradientId = uniqueId('one-line-gradient'),
 
+            hasHighlightedDataPoints = false,
             highlightFilter = null,
             highlightFilterId = null,
             highlightCircleSize = 12,
@@ -245,6 +246,10 @@ define(function(require){
                     drawHoverOverlay();
                     drawVerticalMarker();
                     addMouseEvents();
+                }
+
+                if (hasHighlightedDataPoints) {
+                    highlightAllDataPoints();
                 }
             });
         }
@@ -825,7 +830,17 @@ define(function(require){
         }
 
         /**
-         * Creates coloured circles marking where the exact data y value is for a given data point
+         * Creates colored circles for all data points
+         * @private
+         */
+        function highlightAllDataPoints() {
+            dataByDate.forEach((dataPoint) => {
+                highlightDataPoints(dataPoint);
+            });
+        }
+
+        /**
+         * Creates colored circles marking where the exact data y value is for a given data point
          * @param  {Object} dataPoint Data point to extract info from
          * @private
          */
@@ -1095,6 +1110,21 @@ define(function(require){
                 return grid;
             }
             grid = _x;
+
+            return this;
+        };
+
+        /**
+         * Gets or Sets the height of the chart
+         * @param  {Number} _x Desired width for the graph
+         * @return { (Number | Module) } Current height or Line Chart module to chain calls
+         * @public
+         */
+        exports.hasHighlightedDataPoints = function(_x) {
+            if (!arguments.length) {
+                return hasHighlightedDataPoints;
+            }
+            hasHighlightedDataPoints = _x;
 
             return this;
         };
