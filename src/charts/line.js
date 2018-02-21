@@ -1102,7 +1102,7 @@ define(function(require){
          * Gets or Sets the grid mode.
          *
          * @param  {String} _x Desired mode for the grid ('vertical'|'horizontal'|'full')
-         * @return { String | module} Current mode of the grid or Line Chart module to chain calls
+         * @return {String | module} Current mode of the grid or Line Chart module to chain calls
          * @public
          */
         exports.grid = function(_x) {
@@ -1115,9 +1115,9 @@ define(function(require){
         };
 
         /**
-         * Gets or Sets the height of the chart
-         * @param  {Number} _x Desired width for the graph
-         * @return { (Number | Module) } Current height or Line Chart module to chain calls
+         * Gets or Sets the hasHighlightedDataPoints of the chart
+         * @param  {Boolean} _x Choose whether all data points should be highlighted
+         * @return {Boolean | module} Current hasHighlightedDataPoints or Line Chart module to chain calls
          * @public
          */
         exports.hasHighlightedDataPoints = function(_x) {
