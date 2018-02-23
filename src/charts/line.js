@@ -837,6 +837,13 @@ define(function(require){
             dataByDate.forEach((dataPoint) => {
                 highlightDataPoints(dataPoint);
             });
+            drawAllDataPoints();
+        }
+
+        function drawAllDataPoints() {
+            let points = svg.select('.chart-group');
+            debugger;
+            console.log(points);
         }
 
         /**
